@@ -7,3 +7,4 @@ npm install --save-dev @wdio/cli
 npm install --save-dev mocha@latest 
 npm install --save-dev selenium-standalone@latest
 npm install --save-dev @wdio/selenium-standalone-service
+./node_modules/.bin/wdio config
