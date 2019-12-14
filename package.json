@@ -28,6 +28,7 @@
     "@wdio/sync": "^5.16.10",
     "babel-core": "^6.26.3",
     "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
     "chromedriver": "^78.0.1",
     "mocha": "^6.2.2",
     "selenium-standalone": "^6.17.0",
