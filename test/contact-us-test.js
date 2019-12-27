@@ -1,3 +1,5 @@
+var config = require('../config/main-config');
+
 describe('Test contact us page on webdriveruni', () => {
   beforeEach(function() {
     browser.setWindowSize(1800, 1200);
@@ -20,8 +22,8 @@ describe('Test contact us page on webdriveruni', () => {
     const message = $('//textarea');
     const submitButton = $('//*[@value="SUBMIT"]');
 
-    firstName.setValue('Joe');
-    lastName.setValue('Blogs');
+    firstName.setValue(config.firstName);
+    lastName.setValue(config.lastName);
     email.setValue('joe@mail.com');
     message.setValue('Hello world!');
     submitButton.click();
