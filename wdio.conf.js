@@ -186,6 +186,15 @@ exports.config = {
                 throw new Error("Could not click on selector: " + $(selector));
             }
         });
+
+        browser.addCommand('waitAndSendKeys', function(selector, keys) {
+            try {
+                $(selector).waitForExist();
+                $(selector).setValue(keys);
+            } catch(Error) {
+                throw new Error("Could not send keys: " + $(keys) + ', using selector: ' + $(selector));
+            }
+        });
     },
     /**
      * Runs before a WebdriverIO command gets executed.
