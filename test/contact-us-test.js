@@ -11,23 +11,17 @@ describe('Test contact us page on webdriveruni', () => {
   });
 
   it('Submit all information via the contact us page', () => {
-    const contactUsButton = $("//h1 [text()='CONTACT US'] /..");
-    contactUsButton.click();
+    browser.waitAndClick("//h1 [text()='CONTACT US'] /..");
 
     browser.switchWindow('WebDriver | Contact Us');
    
-    const firstName = $('//*[@name="first_name"]');
-    const lastName = $('//*[@name="last_name"]');
-    const email = $('//*[@name="email"]');
-    const message = $('//textarea');
-    const submitButton = $('//*[@value="SUBMIT"]');
+    browser.waitAndSendKeys('//*[@name="first_name"]', config.firstName);
+    browser.waitAndSendKeys('//*[@name="last_name"]', config.lastName);
+    browser.waitAndSendKeys('//*[@name="email"]','joe@mail.com');
+    browser.waitAndSendKeys('//textarea', 'Hello world!')
 
-    firstName.setValue(config.firstName);
-    lastName.setValue(config.lastName);
-    email.setValue('joe@mail.com');
-    message.setValue('Hello world!');
-    submitButton.click();
-
+    browser.waitAndClick('//*[@value="SUBMIT"]');
+    
     const contactUsSubmissionDetails = browser.getUrlAndTitle();
     expect(contactUsSubmissionDetails.url).to.contain('contact-form-thank-you');
   });
