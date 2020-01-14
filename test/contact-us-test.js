@@ -8,9 +8,9 @@ describe('Test contact us page on webdriveruni', () => {
     browser.setWindowSize(1800, 1200);
     // browser.url('./');
 
-    const pageDetails = browser.getUrlAndTitle();
-    expect(pageDetails.url).to.contain('webdriveruniversity');
-    expect(pageDetails.title).to.contain('WebDriverUniversity');
+    // const pageDetails = browser.getUrlAndTitle();
+    // expect(pageDetails.url).to.contain('webdriveruniversity');
+    // expect(pageDetails.title).to.contain('WebDriverUniversity');
   });
 
   it('Submit all information via the contact us page', () => {
@@ -27,9 +27,9 @@ describe('Test contact us page on webdriveruni', () => {
     ContactUs_PO.comments.setValue(dataGenerators.generateRandomString());
 
     // browser.waitAndClick('//*[@value="SUBMIT"]');
-    ContactUs_PO.submitButton();
+    ContactUs_PO.submit();
     
     // const contactUsSubmissionDetails = browser.getUrlAndTitle();
-    expect(ContactUs_PO.successfulContactHeader).to.contain('contact-form-thank-you');
+    expect(ContactUs_PO.successfulContactHeader.getText()).to.contain('Thank You for your Message!');
   });
 })
