@@ -24,6 +24,16 @@ exports.config = {
     specs: [
         './test/**/*.js'
     ],
+    suites: {
+        contactus: [
+            "./test/contact-us-test.js"
+        ],
+        regressin: [
+            "./test/checkbox-test.js",
+            "./test/homepage-test.js",
+            "./test/switch-window-test.js"
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
